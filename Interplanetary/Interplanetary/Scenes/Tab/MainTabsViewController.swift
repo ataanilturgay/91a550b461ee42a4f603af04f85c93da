@@ -34,7 +34,8 @@ enum TabBarItem {
             vc.viewModel = (viewModel as? HomeViewModel)
             vc.tabBarItem.image = image
             vc.tabBarItem.title = tabBarTitle
-            
+            vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
+
             return UINavigationController(rootViewController: vc)
             
         case .favorites:
@@ -43,6 +44,7 @@ enum TabBarItem {
             vc.tabBarItem.image = image
             vc.tabBarItem.title = tabBarTitle
             vc.title = "Favorites"
+            vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
 
             return UINavigationController(rootViewController: vc)
         }

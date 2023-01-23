@@ -308,14 +308,15 @@ extension HomeViewController: HomeStationCollectionViewCellDelegate {
     
     func travelButtonTapped(tag: Int, ugs: Int, eus: Int) {
         guard let station = self.stations?[tag] else { return }
-
-        configureNavBar()
-        currentPlanetNameLabel.text = MissionsManager.shared.getCurrentPlanetName()
         
         viewModel?.updateStation(with: station)
         viewModel?.updateUGS(with: ugs)
         viewModel?.updateEUS(with: eus)
         viewModel?.updateStations()
+        
+        currentPlanetNameLabel.text = MissionsManager.shared.getCurrentPlanetName()
+        configureNavBar()
+
         viewModel?.checkEUS()
         viewModel?.checkUGS()
     }

@@ -8,6 +8,11 @@
 import UIKit
 import CoreLocation
 
+protocol LandingViewProtocol: AnyObject {
+    
+    func updateTotalPointsLabel(with value: Int)
+}
+
 final class LandingViewController: BaseViewController {
     
     /// Constants
@@ -40,20 +45,19 @@ final class LandingViewController: BaseViewController {
                 
                 static let title: String = "Devam Et"
             }
-        }
-        
-        enum Calculations {
             
-            static let capacityMultiplier: Int = 10000
-            static let speedMultiplier: Int = 20
-            static let durabilityMultiplier: Int = 10000
+            enum NameTextField {
+                
+                static let placeholder: String = "Uzay Aracı İsmi Girin..."
+                static let textColor: UIColor = .black
+                static let font: UIFont = .systemFont(ofSize: 16.0)
+                static let leftPadding: CGFloat = 16.0
+            }
         }
         
         enum Error {
             
             static let errorTitle: String = "Hata"
-            static let spaceshipNameErrorMessage: String = "Lütfen Uzay Aracına Bir İsim Verin"
-            static let emptyFieldErrorMessage: String = "Lütfen 0'dan Farklı Değerler Girin"
         }
     }
     
@@ -79,39 +83,60 @@ final class LandingViewController: BaseViewController {
     override func applyStyling() {
         totalPointsLabel.textColor = Constants.Styling.TotalPointsLabel.textColor
         totalPointsLabel.font = Constants.Styling.TotalPointsLabel.font
-        
         totalPointsLabel.text = "Dağıtılacak Puan: \(Int(viewModel.totalPoints))"
+        
+        nameTextField.placeholder = Constants.Styling.NameTextField.placeholder
+        nameTextField.textColor = Constants.Styling.NameTextField.textColor
+        nameTextField.font = Constants.Styling.NameTextField.font
+        nameTextField.setLeftPaddingPoints(Constants.Styling.NameTextField.leftPadding)
+        
         continueButton.setTitle(Constants.Styling.ContinueButton.title, for: .normal)
     }
     
     override func syncViewModel() {
-        
-        viewModel.calculatedTotalPointsFull = { [weak self] in
+        viewModel.calculatedTotalPointsSuccess = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.totalPointsLabel.text = "Dağıtılacak Puan: \(Int(self.viewModel.remainingPoints))"
+                self.updateTotalPointsLabel(with: self.viewModel.getRemainingPoints())
             }
         }
         
         viewModel.calculatedTotalPointsRemainingPoints = { [weak self] remainingPoints in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.totalPointsLabel.text = "Dağıtılacak Puan: \(Int(remainingPoints))"
+                self.updateTotalPointsLabel(with: self.viewModel.getRemainingPoints())
             }
         }
         
-        viewModel.calculatedTotalPointsError = { [weak self] error in
+        viewModel.calculatedTotalPointsError = { [weak self] in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.showBasicAlert(with: Constants.Error.errorTitle, message: error, style: .alert)
+                self.showBasicAlert(with: Constants.Error.errorTitle, message: "Toplam Dağıtılan Puan 15 Olmalı!", style: .alert)
                 self.viewModel.reset()
                 
-                self.totalPointsLabel.text = "Dağıtılacak Puan: \(Int(self.viewModel.remainingPoints))"
-                
+                self.updateTotalPointsLabel(with: self.viewModel.getRemainingPoints())
+
                 self.speedSliderView.reset()
                 self.durabilitySliderView.reset()
                 self.capacitySliderView.reset()
             }
+        }
+        
+        viewModel.validationSuccess = { [weak self] in
+            guard let self = self else { return }
+            
+            self.navigator.show(scene: .tabs,
+                                sender: self,
+                                transition: .root(in: Application.shared.window!,
+                                                  animated: false))
+        }
+        
+        viewModel.validationError = { [weak self] error in
+            guard let self = self else { return }
+
+            self.showBasicAlert(with: "Hata",
+                                message: error.errorMessage,
+                                style: .alert)
         }
     }
 }
@@ -174,27 +199,21 @@ extension LandingViewController {
     }
 }
 
+// MARK: - LandingView Protocol
+
+extension LandingViewController: LandingViewProtocol {
+    
+    func updateTotalPointsLabel(with value: Int) {
+        totalPointsLabel.text = "Dağıtılacak Puan: \(value)"
+    }
+}
+
 // MARK: - Actions
 
 extension LandingViewController {
     
     @IBAction func continueButton(_ sender: UIButton) {
-        guard let name = nameTextField.text, name.count > 0 else {
-            self.showBasicAlert(with: Constants.Error.errorTitle,
-                                message: Constants.Error.spaceshipNameErrorMessage, style: .alert)
-            return
-        }
-        
-        if viewModel.validateConfiguration() {
-            MissionsManager.shared.setSpaceshipName(with: name)
-            MissionsManager.shared.setCurrentUGS(with: viewModel.capacity * Constants.Calculations.capacityMultiplier)
-            MissionsManager.shared.setCurrentEUS(with: viewModel.speed * Constants.Calculations.speedMultiplier)
-            MissionsManager.shared.setCurrentDS(with: viewModel.durability * Constants.Calculations.durabilityMultiplier)
-            
-            self.navigator.show(scene: .tabs, sender: self, transition: .root(in: Application.shared.window!, animated: false))
-        } else {
-            self.showBasicAlert(with: Constants.Error.errorTitle,
-                                message: Constants.Error.emptyFieldErrorMessage, style: .alert)
-        }
+        viewModel.spaceshipName = nameTextField.text        
+        viewModel.validate()
     }
 }

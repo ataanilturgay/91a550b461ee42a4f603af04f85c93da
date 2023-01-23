@@ -10,7 +10,9 @@ protocol HomeViewModelProtocol: AnyObject {
     func getSpaceshipName() -> String
     func getStations() -> [Station]
     func getStationsBySearch(with value: String)
+    
     func updateStations()
+    
     func checkDamage()
     func checkEUS()
     func checkUGS()
@@ -19,6 +21,7 @@ protocol HomeViewModelProtocol: AnyObject {
     func updateDamage(with value: Int)
     func updateEUS(with value: Int)
     func updateUGS(with value: Int)
+    
     func reset()
 }
 
@@ -26,7 +29,6 @@ final class HomeViewModel: BaseViewModel {
     
     var getStationsSuccess = { (stations: [Station]) -> Void in }
     var getStationsError = { () -> Void in }
-    
     var getStationsBySearchCompleted = { (stations: [Station]) -> Void in }
     
     var updateStationsCompleted = { (stations: [Station]) -> Void in }
@@ -125,21 +127,3 @@ extension HomeViewModel: HomeViewModelProtocol {
         MissionsManager.shared.reset()
     }
 }
-
-// MARK: - Calculations
-
-extension HomeViewModel {
-    
-    func calculateUGS(currentValue: Int, value: Int) -> Int { // uzay giysi sayısı
-        return currentValue - value
-    }
-    
-    func calculateEUS(currentValue: Int, value: Int) -> Int { // uzay giysi sayısı
-        return currentValue - value
-    }
-    
-    func calculateDS(currentValue: Int, value: Int) -> Int { // uzay giysi sayısı
-        return currentValue - value
-    }
-}
-

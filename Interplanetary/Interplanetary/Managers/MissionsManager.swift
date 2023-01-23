@@ -120,7 +120,7 @@ extension MissionsManager {
     
     func reset() {
         currentStation = Station(name: "Dünya", coordinateX: 0, coordinateY: 0, capacity: 0, stock: 0, need: 0)
-        spaceshipName = "Dünya"
+        spaceshipName = ""
         currentUGS = 0
         currentEUS = 0
         currentDS = 0
