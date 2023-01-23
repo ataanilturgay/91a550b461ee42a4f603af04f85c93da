@@ -19,10 +19,10 @@ class BaseViewController: UIViewController {
     }
     
     func applyStyling() {
-        
+        // override this method
     }
     
     func syncViewModel() {
-        
+        // override this method
     }
 }

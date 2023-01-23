@@ -22,7 +22,7 @@ final class LandingViewController: BaseViewController {
             
             enum TotalPointsLabel {
                 
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
                 static let font: UIFont = .systemFont(ofSize: 16.0)
             }
             
@@ -49,9 +49,11 @@ final class LandingViewController: BaseViewController {
             enum NameTextField {
                 
                 static let placeholder: String = "Uzay Aracı İsmi Girin..."
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
                 static let font: UIFont = .systemFont(ofSize: 16.0)
                 static let leftPadding: CGFloat = 16.0
+                static let borderWidth: CGFloat = 1.0
+                static let borderColor: CGColor = UIColor.textColor.cgColor
             }
         }
         
@@ -81,6 +83,9 @@ final class LandingViewController: BaseViewController {
     }
     
     override func applyStyling() {
+        
+        self.view.backgroundColor = .appBackgroundColor
+        
         totalPointsLabel.textColor = Constants.Styling.TotalPointsLabel.textColor
         totalPointsLabel.font = Constants.Styling.TotalPointsLabel.font
         totalPointsLabel.text = "Dağıtılacak Puan: \(Int(viewModel.totalPoints))"
@@ -89,8 +94,12 @@ final class LandingViewController: BaseViewController {
         nameTextField.textColor = Constants.Styling.NameTextField.textColor
         nameTextField.font = Constants.Styling.NameTextField.font
         nameTextField.setLeftPaddingPoints(Constants.Styling.NameTextField.leftPadding)
+        nameTextField.layer.borderWidth = Constants.Styling.NameTextField.borderWidth
+        nameTextField.layer.borderColor = Constants.Styling.NameTextField.borderColor
         
         continueButton.setTitle(Constants.Styling.ContinueButton.title, for: .normal)
+        continueButton.backgroundColor = .textColor
+        continueButton.setTitleColor(.appBackgroundColor, for: .normal)
     }
     
     override func syncViewModel() {
@@ -213,7 +222,7 @@ extension LandingViewController: LandingViewProtocol {
 extension LandingViewController {
     
     @IBAction func continueButton(_ sender: UIButton) {
-        viewModel.spaceshipName = nameTextField.text        
+        viewModel.spaceshipName = nameTextField.text
         viewModel.validate()
     }
 }

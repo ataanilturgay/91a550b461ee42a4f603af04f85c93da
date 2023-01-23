@@ -52,6 +52,7 @@
 		DCBABE4F2979EA7200B52109 /* OtpTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBABE4E2979EA7200B52109 /* OtpTimer.swift */; };
 		DCBABE512979EB5100B52109 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBABE502979EB5100B52109 /* Double+Extensions.swift */; };
 		DCBABE53297C3ADC00B52109 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBABE52297C3ADC00B52109 /* UITextField+Extensions.swift */; };
+		DCC0ED73297EDF7800C9E6E4 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC0ED72297EDF7800C9E6E4 /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		DCBABE4E2979EA7200B52109 /* OtpTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTimer.swift; sourceTree = "<group>"; };
 		DCBABE502979EB5100B52109 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		DCBABE52297C3ADC00B52109 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		DCC0ED72297EDF7800C9E6E4 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				DC8BCAF1297D95C7002D77B4 /* UIView+Extensions.swift */,
 				DC8BCAF3297D95FD002D77B4 /* UICollectionView+Extensions.swift */,
 				DC12F315297E0FAC005C12B2 /* UIViewController+Extensions.swift */,
+				DCC0ED72297EDF7800C9E6E4 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				DC8BCAF2297D95C7002D77B4 /* UIView+Extensions.swift in Sources */,
 				DCBABE3C2979423000B52109 /* BaseHeader.swift in Sources */,
 				DC0062612978AE7C0012FA10 /* Navigatable.swift in Sources */,
+				DCC0ED73297EDF7800C9E6E4 /* UIImage+Extensions.swift in Sources */,
 				DC00624B297846EC0012FA10 /* BaseViewController.swift in Sources */,
 				DCBABE3A2979421800B52109 /* BaseRequest.swift in Sources */,
 				DC006257297850B70012FA10 /* DynamicSliderView.swift in Sources */,

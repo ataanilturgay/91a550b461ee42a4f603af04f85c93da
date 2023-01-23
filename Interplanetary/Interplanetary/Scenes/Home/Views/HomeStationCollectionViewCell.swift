@@ -23,23 +23,34 @@ class HomeStationCollectionViewCell: UICollectionViewCell {
             enum ContainerStackView {
                 
                 static let borderWidth: CGFloat = 1.0
-                static let borderColor: CGColor = UIColor.black.cgColor
+                static let borderColor: CGColor = UIColor.textColor.cgColor
                 static let cornerRadius: CGFloat = 10.0
             }
             
             enum TravelButton {
                 
                 static let borderWidth: CGFloat = 1.0
-                static let borderColor: CGColor = UIColor.black.cgColor
+                static let borderColor: CGColor = UIColor.textColor.cgColor
                 static let cornerRadius: CGFloat = 1.0
                 static let title: String = "Travel"
+                static let textColor: UIColor = .textColor
             }
             
             enum PlanetLabelName {
                 
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
                 static let font: UIFont = .systemFont(ofSize: 16.0)
                 static let textAlignment: NSTextAlignment = .center
+            }
+            
+            enum StockLabel {
+                
+                static let textColor: UIColor = .textColor
+            }
+            
+            enum EUSLabel {
+                
+                static let textColor: UIColor = .textColor
             }
         }
     }
@@ -75,10 +86,15 @@ class HomeStationCollectionViewCell: UICollectionViewCell {
         travelButton.layer.borderColor = Constants.Styling.TravelButton.borderColor
         travelButton.layer.cornerRadius = Constants.Styling.TravelButton.cornerRadius
         travelButton.setTitle(Constants.Styling.TravelButton.title, for: .normal)
+        travelButton.setTitleColor(Constants.Styling.TravelButton.textColor, for: .normal)
         
         planetNameLabel.textColor = Constants.Styling.PlanetLabelName.textColor
         planetNameLabel.font = Constants.Styling.PlanetLabelName.font
         planetNameLabel.textAlignment = Constants.Styling.PlanetLabelName.textAlignment
+        
+        eusLabel.textColor = Constants.Styling.StockLabel.textColor
+        
+        stockLabel.textColor = Constants.Styling.StockLabel.textColor
     }
     
     func configure(with targetStation: Station, tag: Int, isFavorited: Bool, currentStation: Station) {
@@ -118,7 +134,6 @@ extension HomeStationCollectionViewCell {
 extension HomeStationCollectionViewCell {
     
     func calculateEUS() {
-        
         guard let targetStation = targetStation, let currentStation = currentStation else { return }
         
         let result = Utils.CGPointDistanceSquared(from: currentStation.pointXY,

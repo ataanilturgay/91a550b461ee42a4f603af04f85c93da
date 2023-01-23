@@ -5,13 +5,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeStationCollectionViewCell" id="gTV-IL-0wX" customClass="HomeStationCollectionViewCell" customModule="Interplanetary" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeStationCollectionViewCell" id="gTV-IL-0wX" customClass="HomeStationCollectionViewCell" customModule="_1a550b461ee42a4f603af04f85c93da" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="290" height="261"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,7 +28,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KQ-uk-j8l">
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="63"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="Rrf-ab-l5o"/>
                                                 </constraints>
@@ -53,7 +52,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-1u-qTQ">
                                                 <rect key="frame" x="100" y="0.0" width="92" height="63"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lc-Pf-aSO">
                                                 <rect key="frame" x="192" y="0.0" width="50" height="63"/>
@@ -66,7 +65,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="lJJ-W9-RRJ" secondAttribute="trailing" id="0Q8-sl-gcR"/>
                                                     <constraint firstItem="lJJ-W9-RRJ" firstAttribute="top" secondItem="6Lc-Pf-aSO" secondAttribute="top" id="8zr-Ig-Rfo"/>
@@ -77,7 +76,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-jW-WVB">
                                                 <rect key="frame" x="242" y="0.0" width="16" height="63"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -95,7 +94,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="LcW-rk-V0m" secondAttribute="trailing" constant="16" id="PLe-4A-VhJ"/>
                                             <constraint firstItem="LcW-rk-V0m" firstAttribute="leading" secondItem="qcU-YJ-scT" secondAttribute="leading" constant="16" id="gAm-kv-j6Y"/>
@@ -118,7 +117,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="0MX-id-pxz" firstAttribute="centerX" secondItem="c1Y-mW-2zF" secondAttribute="centerX" id="X5R-6i-No3"/>
                                             <constraint firstAttribute="bottom" secondItem="0MX-id-pxz" secondAttribute="bottom" constant="16" id="aSO-EH-VsE"/>
@@ -129,7 +128,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gwK-tY-w20" firstAttribute="top" secondItem="SMw-2G-1qv" secondAttribute="top" constant="16" id="G8B-1s-deM"/>
                             <constraint firstAttribute="trailing" secondItem="gwK-tY-w20" secondAttribute="trailing" constant="16" id="Nng-FQ-QfB"/>
@@ -159,9 +158,4 @@
             <point key="canvasLocation" x="274.80916030534348" y="63.028169014084511"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

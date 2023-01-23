@@ -35,7 +35,7 @@ enum TabBarItem {
             vc.tabBarItem.image = image
             vc.tabBarItem.title = tabBarTitle
             vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
-
+            
             return UINavigationController(rootViewController: vc)
             
         case .favorites:
@@ -62,6 +62,7 @@ class MainTabsViewController: UITabBarController, Navigatable {
     override func viewDidLoad() {
         super.viewDidLoad()
         syncViewModel()
+        applyStyling()
     }
     
     private func syncViewModel() {
@@ -69,5 +70,10 @@ class MainTabsViewController: UITabBarController, Navigatable {
         let controllers = viewModel.tabBarItems.map { $0.controller(with: self.viewModel.viewModel(for: $0)) }
         self.setViewControllers(controllers, animated: false)
         self.navigator.injectTabBarControllers(in: self)
+    }
+    
+    private func applyStyling() {
+        self.tabBar.tintColor = .textColor
+        self.tabBar.barTintColor = .textColor
     }
 }

@@ -27,6 +27,8 @@ final class FavoritesViewController: BaseViewController {
     
     override func applyStyling() {
         super.applyStyling()
+        
+        self.view.backgroundColor = .appBackgroundColor
     }
     
     override func syncViewModel() {

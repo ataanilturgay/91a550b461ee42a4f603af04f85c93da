@@ -28,32 +28,43 @@ final class HomeViewController: BaseViewController {
                 static let searchBottom: CGFloat = 24.0
             }
             
+            enum SpaceshipNameLabel {
+                
+                static let font: UIFont = .systemFont(ofSize: 16.0)
+                static let textColor: UIColor = .textColor
+                static let textAlignment: NSTextAlignment = .center
+                static let numberOfLines: Int = 0
+            }
+            
             enum RemainingUGSLabel {
                 
                 static let borderWidth: CGFloat = 1.0
-                static let borderColor: CGColor = UIColor.black.cgColor
+                static let borderColor: CGColor = UIColor.textColor.cgColor
                 static let cornerRadius: CGFloat = 1.0
+                static let textColor: UIColor = .textColor
             }
             
             enum CurrentRemainingTimeLabel {
                 
                 static let borderWidth: CGFloat = 1.0
-                static let borderColor: CGColor = UIColor.black.cgColor
+                static let borderColor: CGColor = UIColor.textColor.cgColor
                 static let cornerRadius: CGFloat = 1.0
+                static let textColor: UIColor = .textColor
             }
             
             enum SearchTextField {
                 
-                static let borderColor: CGColor = UIColor.black.cgColor
+                static let borderColor: CGColor = UIColor.textColor.cgColor
                 static let borderWidth: CGFloat = 1.0
                 static let cornerRadius: CGFloat = 1.0
                 static let leftPadding: CGFloat = 16.0
+                static let textColor: UIColor = .textColor
             }
             
             enum CurrentPlanetNameLabel {
                 
                 static let font: UIFont = .systemFont(ofSize: 16.0)
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
                 static let textAlignment: NSTextAlignment = .center
                 static let numberOfLines: Int = 0
             }
@@ -103,20 +114,30 @@ final class HomeViewController: BaseViewController {
     
     override func applyStyling() {
         super.applyStyling()
-                
+        
+        self.view.backgroundColor = .appBackgroundColor
+        
+        spaceshipNameLabel.font = Constants.Styling.SpaceshipNameLabel.font
+        spaceshipNameLabel.textColor = Constants.Styling.SpaceshipNameLabel.textColor
+        spaceshipNameLabel.textAlignment = Constants.Styling.SpaceshipNameLabel.textAlignment
+        spaceshipNameLabel.numberOfLines = Constants.Styling.SpaceshipNameLabel.numberOfLines
+                    
         remainingDamageCapacity.layer.borderColor = Constants.Styling.RemainingUGSLabel.borderColor
         remainingDamageCapacity.layer.borderWidth = Constants.Styling.RemainingUGSLabel.borderWidth
         remainingDamageCapacity.layer.cornerRadius = Constants.Styling.RemainingUGSLabel.cornerRadius
+        remainingDamageCapacity.textColor = Constants.Styling.RemainingUGSLabel.textColor
         
         currentRemaininTimeLabel.layer.borderColor = Constants.Styling.CurrentRemainingTimeLabel.borderColor
         currentRemaininTimeLabel.layer.borderWidth = Constants.Styling.CurrentRemainingTimeLabel.borderWidth
         currentRemaininTimeLabel.layer.cornerRadius = Constants.Styling.CurrentRemainingTimeLabel.cornerRadius
-        
+        currentRemaininTimeLabel.textColor = Constants.Styling.CurrentRemainingTimeLabel.textColor
+
         searchTextField.layer.borderColor = Constants.Styling.SearchTextField.borderColor
         searchTextField.layer.borderWidth = Constants.Styling.SearchTextField.borderWidth
         searchTextField.layer.cornerRadius = Constants.Styling.SearchTextField.cornerRadius
         searchTextField.setLeftPaddingPoints(Constants.Styling.SearchTextField.leftPadding)
         searchTextField.addTarget(self, action: #selector(searchTextValueChanged(_:)), for: .editingChanged)
+        searchTextField.textColor = Constants.Styling.SearchTextField.textColor
         
         stackView.setCustomSpacing(Constants.Styling.Spacing.infosBottom, after: infosStackView)
         stackView.setCustomSpacing(Constants.Styling.Spacing.searchBottom, after: searchTextContainerView)
@@ -330,7 +351,7 @@ extension HomeViewController {
         lazy var ugsLabel: UILabel = {
             let label =  UILabel(frame: .zero)
             label.text = "UGS: \(ugs)"
-            label.textColor = .black
+            label.textColor = .textColor
             label.textAlignment = .center
             return label
         }()
@@ -338,7 +359,7 @@ extension HomeViewController {
         lazy var eusLabel: UILabel = {
             let label =  UILabel(frame: .zero)
             label.text = "EUS: \(eus)"
-            label.textColor = .black
+            label.textColor = .textColor
             label.textAlignment = .center
             return label
         }()
@@ -346,7 +367,7 @@ extension HomeViewController {
         lazy var dsLabel: UILabel = {
             let label =  UILabel(frame: .zero)
             label.text = "DS: \(ds)"
-            label.textColor = .black
+            label.textColor = .textColor
             label.textAlignment = .center
             return label
         }()

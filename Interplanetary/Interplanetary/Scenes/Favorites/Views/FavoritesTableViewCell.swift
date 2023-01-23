@@ -21,19 +21,20 @@ class FavoritesTableViewCell: UITableViewCell {
             enum PlanetNameLabel {
                 
                 static let textAlignment: NSTextAlignment = .left
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
             }
             
             enum EUSLabel {
                 
                 static let textAlignment: NSTextAlignment = .left
-                static let textColor: UIColor = .black
+                static let textColor: UIColor = .textColor
             }
             
             enum FavoriteButton {
                 
                 static let filledImage: String = "favorites-filled"
                 static let emptyImage: String = "favorites-empty"
+                static let tintColor: UIColor = .textColor
             }
         }
     }
@@ -63,15 +64,19 @@ class FavoritesTableViewCell: UITableViewCell {
         
         planetNameLabel.text = station.name
         favoriteButton.tag = tag
-        favoriteButton.setImage(UIImage(named: isFavorited ? Constants.Styling.FavoriteButton.filledImage : Constants.Styling.FavoriteButton.emptyImage), for: .normal)
+        favoriteButton.setImage(UIImage(named: isFavorited ? Constants.Styling.FavoriteButton.filledImage : Constants.Styling.FavoriteButton.emptyImage)?.withColor(.textColor), for: .normal)
     }
     
     func applyStyling() {
+        self.backgroundColor = .appBackgroundColor
+        
         planetNameLabel.textAlignment = Constants.Styling.PlanetNameLabel.textAlignment
         planetNameLabel.textColor = Constants.Styling.PlanetNameLabel.textColor
         
         eusLabel.textAlignment = Constants.Styling.EUSLabel.textAlignment
         eusLabel.textColor = Constants.Styling.EUSLabel.textColor
+        
+        favoriteButton.tintColor = Constants.Styling.FavoriteButton.tintColor
     }
 }
 

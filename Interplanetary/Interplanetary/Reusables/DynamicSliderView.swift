@@ -25,7 +25,7 @@ final class DynamicSlider: UIView {
     
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .black
+        label.textColor = .textColor
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
@@ -33,7 +33,7 @@ final class DynamicSlider: UIView {
     
     private(set) lazy var valueLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .black
+        label.textColor = .textColor
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
@@ -45,6 +45,8 @@ final class DynamicSlider: UIView {
         slider.maximumValue = 15
         slider.minimumValue = 0
         slider.isContinuous = true
+        slider.tintColor = .textColor
+        slider.backgroundColor = .appBackgroundColor
         slider.addTarget(self, action: #selector(sliderValueDidChange(_:)), for: .valueChanged)
         return slider
     }()
