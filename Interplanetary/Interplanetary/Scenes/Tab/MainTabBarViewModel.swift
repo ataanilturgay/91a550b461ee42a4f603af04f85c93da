@@ -8,7 +8,6 @@
 final class MainTabBarViewModel: BaseViewModel {
     
     override init(provider: APIClient) {
-
         super.init(provider: provider)
     }
 
@@ -17,7 +16,6 @@ final class MainTabBarViewModel: BaseViewModel {
     }
     
     func viewModel(for tabBarItem: TabBarItem) -> BaseViewModel {
-
         switch tabBarItem {
         case .stations:
             let viewModel = HomeViewModel(provider: APIClient(network: NetworkLayer()), name: MissionsManager.shared.getSpaceshipName())

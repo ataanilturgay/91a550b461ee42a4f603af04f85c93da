@@ -52,6 +52,13 @@ class HomeStationCollectionViewCell: UICollectionViewCell {
                 
                 static let textColor: UIColor = .textColor
             }
+            
+            enum FavoriteButton {
+                
+                static let filledImage: String = "favorites-filled"
+                static let emptyImage: String = "favorites-empty"
+                static let tintColor: UIColor = .textColor
+            }
         }
     }
     
@@ -95,6 +102,8 @@ class HomeStationCollectionViewCell: UICollectionViewCell {
         eusLabel.textColor = Constants.Styling.StockLabel.textColor
         
         stockLabel.textColor = Constants.Styling.StockLabel.textColor
+        
+        favoritesButton.tintColor = Constants.Styling.FavoriteButton.tintColor
     }
     
     func configure(with targetStation: Station, tag: Int, isFavorited: Bool, currentStation: Station) {
@@ -107,7 +116,8 @@ class HomeStationCollectionViewCell: UICollectionViewCell {
         stockLabel.text = "\(targetStation.capacity)/\(targetStation.stock)"
         favoritesButton.tag = tag
         travelButton.tag = tag
-        favoritesButton.setImage(UIImage(named: isFavorited ? "favorites-filled" : "favorites-empty"), for: .normal)
+
+        favoritesButton.setImage(UIImage(named: isFavorited ? Constants.Styling.FavoriteButton.filledImage : Constants.Styling.FavoriteButton.emptyImage), for: .normal)
     }
 }
 

@@ -35,8 +35,6 @@ final class Application: NSObject {
     }
     
     func configureNavigationBar() {
-        //UINavigationBar.appearance().barTintColor = .gray
-        //UINavigationBar.appearance().tintColor = .blue
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.textColor, .font: UIFont.systemFont(ofSize: 16.0)]
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.textColor, .font: UIFont.systemFont(ofSize: 32.0)]
         UINavigationBar.appearance().prefersLargeTitles = false

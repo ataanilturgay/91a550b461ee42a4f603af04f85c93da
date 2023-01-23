@@ -64,7 +64,7 @@ class FavoritesTableViewCell: UITableViewCell {
         
         planetNameLabel.text = station.name
         favoriteButton.tag = tag
-        favoriteButton.setImage(UIImage(named: isFavorited ? Constants.Styling.FavoriteButton.filledImage : Constants.Styling.FavoriteButton.emptyImage)?.withColor(.textColor), for: .normal)
+        favoriteButton.setImage(UIImage(named: isFavorited ? Constants.Styling.FavoriteButton.filledImage : Constants.Styling.FavoriteButton.emptyImage), for: .normal)
     }
     
     func applyStyling() {

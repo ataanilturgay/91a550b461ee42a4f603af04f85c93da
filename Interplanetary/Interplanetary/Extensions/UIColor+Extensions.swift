@@ -86,7 +86,7 @@ public extension UIColor {
 extension UIColor {
     
     class var textColor: UIColor {
-        return .dynamicColor(light: .from(hex: "ffffff"), dark: .from(hex: "#78f0b8"))
+        return .dynamicColor(light: .from(hex: "1a390a"), dark: .from(hex: "#ffffff"))
     }
     
     class var backgroundColor: UIColor {
@@ -94,6 +94,6 @@ extension UIColor {
     }
     
     class var appBackgroundColor: UIColor {
-        return .dynamicColor(light: .from(hex: "#048549"), dark: .from(hex: "#10261c"))
+        return .dynamicColor(light: .from(hex: "#FAF0E6"), dark: .from(hex: "#507963"))
     }
 }
