@@ -55,7 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DC00622C297844260012FA10 /* Interplanetary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interplanetary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC00622C297844260012FA10 /* 91a550b461ee42a4f603af04f85c93da.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 91a550b461ee42a4f603af04f85c93da.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC00622F297844260012FA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC006236297844260012FA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC0062382978442A0012FA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		DC00622D297844260012FA10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC00622C297844260012FA10 /* Interplanetary.app */,
+				DC00622C297844260012FA10 /* 91a550b461ee42a4f603af04f85c93da.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,9 +323,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC00622B297844260012FA10 /* Interplanetary */ = {
+		DC00622B297844260012FA10 /* 91a550b461ee42a4f603af04f85c93da */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC0062402978442A0012FA10 /* Build configuration list for PBXNativeTarget "Interplanetary" */;
+			buildConfigurationList = DC0062402978442A0012FA10 /* Build configuration list for PBXNativeTarget "91a550b461ee42a4f603af04f85c93da" */;
 			buildPhases = (
 				DC006228297844260012FA10 /* Sources */,
 				DC006229297844260012FA10 /* Frameworks */,
@@ -335,9 +335,9 @@
 			);
 			dependencies = (
 			);
-			name = Interplanetary;
+			name = 91a550b461ee42a4f603af04f85c93da;
 			productName = Interplanetary;
-			productReference = DC00622C297844260012FA10 /* Interplanetary.app */;
+			productReference = DC00622C297844260012FA10 /* 91a550b461ee42a4f603af04f85c93da.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -355,7 +355,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DC006227297844260012FA10 /* Build configuration list for PBXProject "Interplanetary" */;
+			buildConfigurationList = DC006227297844260012FA10 /* Build configuration list for PBXProject "91a550b461ee42a4f603af04f85c93da" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -368,7 +368,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC00622B297844260012FA10 /* Interplanetary */,
+				DC00622B297844260012FA10 /* 91a550b461ee42a4f603af04f85c93da */,
 			);
 		};
 /* End PBXProject section */
@@ -633,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC006227297844260012FA10 /* Build configuration list for PBXProject "Interplanetary" */ = {
+		DC006227297844260012FA10 /* Build configuration list for PBXProject "91a550b461ee42a4f603af04f85c93da" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC00623E2978442A0012FA10 /* Debug */,
@@ -642,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC0062402978442A0012FA10 /* Build configuration list for PBXNativeTarget "Interplanetary" */ = {
+		DC0062402978442A0012FA10 /* Build configuration list for PBXNativeTarget "91a550b461ee42a4f603af04f85c93da" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0062412978442A0012FA10 /* Debug */,
